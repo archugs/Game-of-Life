@@ -50,14 +50,28 @@ public class Grid
 	    }
 	}
     }
-
+    
+    public void populate(char[][] c)
+    {
+    	for(int i = 0; i < c.length; i ++)
+    	{
+    		for(int j = 0; j < c.length; j ++)
+    		{
+    			if(c[i][j] == 'A')
+    			{
+    				cells[i][j].setAlive(true);
+    			}
+    		}
+    	}
+    }
+    
     /**
      * Cell is the unit of Life in the grid. It is either alive or dead.
      * 
      * @author jkk
      * 
      */
-    public class Cell
+    class Cell
     {
 	/**
 	 * alive - stores the alive/dead state of the cell
@@ -246,7 +260,7 @@ public class Grid
      * Driver used to test the Grid with sample input
      * @param args - Not used
      */
-    public static void main(String args[])
+    /*public static void main(String args[])
     {
 	Grid g = new Grid(10, 10);
 
@@ -260,6 +274,6 @@ public class Grid
 	for (int generation = 0; generation < 10; generation++) {
 	    System.out.println(g.toString());
 	    g.advance1Generation();
-	}
-    }
+	}*/
+   // }
 }
